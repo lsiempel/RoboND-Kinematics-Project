@@ -109,6 +109,7 @@ The WC position is extracted from the EE as follows:
         WC = EEpos - d7*ROT_EE[:,2]# WC Position Matrix
 
 With the WC position calculated, theta 1, theta2, and theta3 can be calculated using some trig:
+
 ![Sketch of WC Position Calcs][image2]
 
 With thetas 1-3 calculated the orientation can be determined by realizing that the rotation of the EE is equal to the rotation of the the Wrist, that is that it is equal to the Rotational Transform from Joint 3 to joint 6 which can be calculated as follows:
@@ -135,7 +136,7 @@ Now we are able to solve for all of the joint angles given any arbitrary EE Posi
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
-The theory above was codified and debugged initially using [IK_Debug.py](./IK_Debug.py) to ensure the FK and IK were solved correctly.
+The theory above was codified and debugged initially using [IK_Debug.py]() to ensure the FK and IK were solved correctly.
 
 By launching the provided RViz environment, ($roslaunch kuka_arm forward_kinematics.launch),  you can set the Kuka Arm to arbitrary joint angles and extract the EE position/orientation which can then be written into the IK_Debug.py file to verify your FK and IK results in the expected theta values.
 
