@@ -146,7 +146,11 @@ The IK_server.py initialized the IK_Server node in ROS with a service of type Ca
 
 In the interest of speeding up the processing of the poses by IK_Server.py at runtime, the FK and other constant defintions are calculated just once for each list of Pose requests. Necessarily the IK calculations are performed for each Pose message received. Further performance improvements could be gained by precalculating all constants and hardcoding in their values to the IK. I have decided to leave my code parametric so that it can be easily resused for different URDF files with different DH parameters.
 
-The test environment is run by starting by following the instructions in Udacity's Project Repo's Readme, preserved in this repo as README_Original
+The test environment is run by starting by following the instructions in Udacity's Project Repo's Readme, preserved in this repo as [README_Original.md](/README_Original.md). With RViz and Gazebo fired up per those instructions, and the demo flag set to 'false' in the [inverse_kinematics.launch](kuka_arm/launch/inverse_kinematics.launch) file  the IK_server node can be initialized by running IK_Server.py.
+
+And voila - by stepping through the sequence of events in RViz IK_server.py can be seen to successfully generate the necessary joint angles to reliably control the Kuka Arm.
+
+
 
 
 And just for fun, another example image:
