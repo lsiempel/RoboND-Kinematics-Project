@@ -18,7 +18,7 @@
 [//]: # (Image References)
 
 [image1]: ./misc_images/img_1.jpg
-[image2]: ./misc_images/img_2.png
+[image2]: ./misc_images/img_2.jpg
 [image3]: ./misc_images/misc2.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
@@ -136,11 +136,11 @@ Now we are able to solve for all of the joint angles given any arbitrary EE Posi
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
-The theory above was codified and debugged initially using [IK_Debug.py]() to ensure the FK and IK were solved correctly.
+The theory above was codified and debugged initially using [IK_Debug.py](./) to ensure the FK and IK were solved correctly.
 
 By launching the provided RViz environment, ($roslaunch kuka_arm forward_kinematics.launch),  you can set the Kuka Arm to arbitrary joint angles and extract the EE position/orientation which can then be written into the IK_Debug.py file to verify your FK and IK results in the expected theta values.
 
-Once certain the FK and IK work as expected they can be ported into the [IK_Server.py]((kuka_arm/scripts/)
+Once certain the FK and IK work as expected they can be ported into the [IK_Server.py](/kuka_arm/scripts/)
 
 
 And just for fun, another example image:
