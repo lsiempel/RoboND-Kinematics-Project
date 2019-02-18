@@ -106,7 +106,7 @@ The DH conventional coordinate frames do not match with the coordinate frames su
 To generate the Inverse Kinematics (IK) of this system. The joint angles (theta) must be extracted for any arbitrary End Effector (EE) Positiona and Orientation. This is done by decopuling the the Wrist Center (WC) Position from its orientation.
 The WC position is extracted from the EE as follows: 
 
-WC = EEpos - d7*ROT_EE[:,2]# WC Position Matrix
+        WC = EEpos - d7*ROT_EE[:,2]# WC Position Matrix
 
 With the WC position calculated, theta 1, theta2, and theta3 can be calculated using some trig:
 ![Sketch of WC Position Calcs][image2]
@@ -114,6 +114,7 @@ With the WC position calculated, theta 1, theta2, and theta3 can be calculated u
 With thetas 1-3 calculated the orientation can be determined by realizing that the rotation of the EE is equal to the rotation of the the Wrist, that is that it is equal to the Rotational Transform from Joint 3 to joint 6 which can be calculated as follows:
 
 #extract rotation matrix from base to WC
+
     R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
     R0_3 = R0_3.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
     #extract rotation matrix from WC to EE
@@ -122,20 +123,21 @@ With thetas 1-3 calculated the orientation can be determined by realizing that t
 By subbing in the joint anngles theta1-3 into R0_3.transpose the RHS of the equation, R3_6, can be simplified and used to solve for the remaining joint angles, theta4-6:
 
 #calculate the Wrist Joint angles Joints 3-6
+
     theta4 = atan2(R3_6[2,2], -R3_6[0,2])
     theta5 = atan2(sqrt(R3_6[0,2]**2 + R3_6[2,2]**2),R3_6[1,2])
     theta6 = atan2(-R3_6[1,1],R3_6[1,0])
 
-
-
+Now we are able to solve for all of the joint angles given any arbitrary EE Position and Orientation and have solved the IK for this arm. 
 
 
 ### Project Implementation
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
+The theory above was codified and debugged initially using [IK_Debug.py](IK_Debug.py) to ensure the FK and IK were solved correctly.
 
-Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
+By launching the provided RViz environment, (roslaunch kuka_arm forward_kinematics.launch),  
 
 
 And just for fun, another example image:
