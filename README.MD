@@ -19,7 +19,7 @@
 
 [image1]: ./misc_images/img_1.jpg
 [image2]: ./misc_images/img_2.jpg
-[image3]: ./misc_images/misc2.png
+[image3]: ./misc_images/img_3.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -150,10 +150,7 @@ The test environment is run by starting by following the instructions in Udacity
 
 And voila - by stepping through the sequence of events in RViz IK_server.py can be seen to successfully generate the necessary joint angles to reliably control the Kuka Arm.
 
-
-
-
-And just for fun, another example image:
-![alt text][image3]
+Image of the simulation in action below:
+![IK_server success][image3]
 
 
