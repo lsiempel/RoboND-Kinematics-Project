@@ -1,6 +1,6 @@
 ## Project: Kinematics Pick & Place
-### Writeup Template: You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
+### Project 2 submission by Lewis Siempelkamp for Udacity's Robotics NanoDegree Term 1 
+### February 2019
 ---
 
 
@@ -34,7 +34,7 @@ You're reading it!
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
-Here is an example of how to include an image in your writeup.
+By parsing the supplied [URDF file](kuka_arm/urdf) for the Kuka Arm the joint coordinate frames can be extracted and translated into coordinate frames following the modified DH convention 
 
 ![alt text][image1]
 
